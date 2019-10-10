@@ -1,0 +1,3 @@
+module load gatk/3.4.46
+export _JAVA_OPTIONS="-Xms100g -Xmx250g"
+java -Xms100g -Xmx250g -jar GenomeAnalysisTK.jar -nt 8 -T UnifiedGenotyper -glm SNP -R Sbicolor_v3.0.fa -I P04_WA01.uq.sorted.bam -I P04_WA02.uq.sorted.bam -ploidy 12 -mbq 20 -stand_call_conf 30 -stand_emit_conf 10 -o SNP.vcf
